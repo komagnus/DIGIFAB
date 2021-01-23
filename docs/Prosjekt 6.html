@@ -32,10 +32,66 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Prosjekt 6</h1>
+										<h1>Prosjekt 6 - WiFi lyskontroll ESP32</h1>
 									</header>
 									<span class="image main"><img src="" alt="" /></span>
-									<p>Her kommer mitt sjette prosjekt</p>
+									<p>For mitt sjette prosjekt i emnet skulle vi gjøre noe med ESP32. Jeg så mye på internett men fant ikke mye som jeg ønsket å gjøre. Jeg falt tilslutt på å videreutvikle prosjektet fra livestreamen til
+										emnet. Jeg ønsket da å lage en webserver med esp32 hvor jeg kunne styre om lys jeg hadde koblet opp med esp32en lyste eller ikke. Jeg hadde kun plass til tre lys på breadboardet så jeg brukte henholdsvis
+										rødt, gult og grønt lys. 
+									</p>
+								</div>
+								<div class="inner">
+									<h2>Utstyr</h2>
+									<p>For å få koblet opp lyset trengtes det noe ustyr, under har jeg listet opp ved bilde av de.</p>
+									<h3>Ledninger:</h3>
+									<img src="images/esp32_lys_ledninger.jpg" alt="bilde av ledninger" style="max-width:800px;">
+									<figcaption>Jeg brukte alle ledningene som er avbildet over i prosjektet.</figcaption>
+									<h3>Lys og resistorer:</h3>
+									<img src="images/esp32_lys_lysogresistor.jpg" alt="bilde av lys og resistorer" style="max-width:800px;">
+									<figcaption>Jeg benyttet 3 220 ohm resistorer og 3 forskjellige lys.</figcaption>
+									<h3>Selve ESP32</h3>
+									<p>ESPen jeg benyttet var Adafruit HUZZAH32 feather esp32.</p>
+									<img src="images/esp32.jpg" alt="bilde av esp32" style="max-width:800px;">
+									<figcaption>Adafruit HUZZAH32 feather esp32.</figcaption>
+								</div>
+								<div class="inner">
+									<h2>Elektronikk</h2>
+									<p>Selve koblingen av prosjektet var i teorien ikke spesielt vanskelig, men pga lite breadboard ble det noe vanskelig å få alle ledninger på riktig sted. Jeg fikk derimot det til etterhvert og koblingen ble slik:</p>
+									<img src="images/esp32_lys_ferdig_koblet_rettsyn.jpg" alt="bilde av prosjektet ferdig koblet" style="max-width:800px;">
+									<figcaption>Koblingen sett rett på.</figcaption>
+									<img src="images/esp32_lys_ferdig_koblet_sidesyn.jpg" alt="bilde av prosjektet ferdig koblet" style="max-width:800px;">
+									<figcaption>Koblingen sett fra siden.</figcaption>
+								</div>
+								<div class="inner">
+									<h2>Koding</h2>
+									<p>Etter å ha koblet ferdig gikk jeg over på koding. Basisen fikk jeg fra livestreamen <a href="https://www.youtube.com/watch?v=JYxT5ACi8vw&t=2217s">for emnet</a>. Jeg la til i hovedsak de to ekstra outputtene, 
+									og gjorde slik at trykk på de nye linkene jeg la til på nettsiden ville utføre en handling. se bildene under for koden:
+								</p>
+								<img src="images/kode_esp32_1.PNG" alt="bilde av koden" style="max-width:800px;">
+								<img src="images/kode_esp32_2.PNG" alt="bilde av koden" style="max-width:800px;">
+								<img src="images/kode_esp32_3.PNG" alt="bilde av koden" style="max-width:800px;">
+								</div>
+								<div class="inner">
+									<h2>I bruk</h2>
+									<p>Til slutt gjensto det kun å prøve om det fungerte. Noe det heldigvis gjorde. Nettsiden jeg konstruerte ble slik: </p>
+									<img src="images/esp32_lys_nettsiden.jpg" alt="bilde av nettsiden" style="max-width: 800px;"/>
+									<p>Under har jeg lagt noen forskjellige videoer av hvordan prosjektet fungerer.</p>
+									<video controls="controls" width="800px">
+										<source  src="videos/esp32_lys_pcview.mp4" type="video/mp4"/>
+										Nettleseren støtter ikke videoavspilling.
+									</video>
+									<figcaption>Lyset ble styrt gjennom nettsiden</figcaption>
+									<video controls="controls" width="800px">
+										<source  src="videos/esp32_lys_kunLys.mp4" type="video/mp4"/>
+										Nettleseren støtter ikke videoavspilling.
+									</video>
+									<figcaption>Lyset ble endret ettersom jeg trykte.</figcaption>
+									<video controls="controls" width="800px">
+										<source  src="videos/esp32_lys_monitorview.mp4" type="video/mp4"/>
+										Nettleseren støtter ikke videoavspilling.
+									</video>
+									<figcaption>Monitoren viste at nettsiden ble oppdatert hver gang jeg trykket på en link.</figcaption>
+
 								</div>
 							</section>
 
