@@ -34,10 +34,11 @@
 									<header class="major">
 										<h1>Sluttprosjekt - MagicMirror</h1>
 									</header>
+									<img src="images/sluttprosjekt/MagicMirror.jpg" style="width:100%;align-items:center;"/>
 									<span class="image main"><img src="" alt="" /></span>
 									<p>
 										Som min eksamensinnlevering har jeg valgt sluttprosjektet "MagicMirror". MagicMirror er et smartspeil som viser vær, nyheter, dato osv. Jeg fikk inspirasjon til oppgaven
-                                        fra oversikt emneansvarlig hadde over mulige sluttprosjekter. Det orginale prosjektet er hentet fra <a href="https://hackaday.io/project/13466/components">hackaday.io</a>. 
+                                        fra oversikt emneansvarlig hadde over mulige sluttprosjekter. Det orginale prosjektet er hentet fra <a href="https://hackaday.io/project/13466-raspberry-pi-smart-mirror">hackaday.io</a>. 
                                         Jeg har gjort egne tilnærminger, men brukt aspekter fra det prosjektet. Prosjektet treffer innom flere temaer som har vært relevantet i kurset. 
 									</p>
 								</div>
@@ -49,35 +50,203 @@
                                             <li>RaspberryPi</li>
                                             <li>Akryil gjennomsiktig speil</li>
                                             <li>Treverk til ramme</li>
+											<li>Laserkutter til å lage ramme</li>
                                             <li>3Dprinter og tråd til å printe</li>
                                             <li>Trelim</li>
                                             <li>Skruer</li>
+											<li>En RaspberryPi</li>
                                         </ul>
 								</div>
 								<div class="inner">
-									<h2>Design og feilgravering</h2>
-									<p>Jeg ønsket å bruke egendefinert tekst som skulle på glasset, for å lage dette brukte jeg inkscape. Designet ble da slik:</p>
-									<img src="images/inkscape_designfail.JPG" alt="feil design"  style="max-width:800px;"/>
-									<p>Feilen med dette designet var at jeg hadde målet delen jeg skulle gravere på glasset, og ikke det bredeste av glasset. Jeg hadde altså målet slik:</p>
-									<img src="images/glass-mål.jpg" alt="Måling av glasset"  style="max-width:800px;"/>
-									<p>Da jeg nevnte dette for veileder endret vi størrelsen til hva det var bredest på glasset, radiusen ble da endret fra 225mm til 275mm og ble seende slik ut:</p>
-									<img src="images/inkscape_designfail2.JPG" alt="feil design nr2"  style="max-width:800px;"/>
-									<p>Det førte til at området som skulle graveres ble kort og graveringen ville overlappet dersom vi ikke stoppet. Det ble seende slik ut:</p>
-									<img src="images/feil-gravering.jpg" alt="feil gravering"  style="max-width:800px;"/>
-									<figcaption>Her ville altså B-en overlappet teksten om vi ikke stoppet.</figcaption>
+									<h2>Speilets ramme</h2>
+									<p>
+										Slik som speilet var designet i inspirasjonskilden, ble det brukt "planker" til ramme og det ble 3dprintet fester som skulle holde skjermen på baksiden på plass. Jeg ønsket også originalt å 
+										benytte samme metode, men da emneansvarlig kom med forsalg om å laserkutte makercase istedet fant jeg ut at jeg heller ville bruke det. Jeg var redd for at matrialet som skulle laserkuttes ble for tynt,
+										da jeg måtte benytte fester på baksiden av skjermen. Jeg fant derimot til slutt ut at det ville gå med 6mm, hvor jeg kunne benytte korte skruer. Designet av rammen ble da slik:  
+									</p>
+									<img src="images/sluttprosjekt/makercase.JPG" style="max-width:600px;width:100%"/>
+									<figcaption>Makercase design med riktig størrelser, laget på nettsiden til <a href="https://en.makercase.com/#/basicbox">makercase</a>.</figcaption>
+
+									<p>
+										<br/>
+										Etter å ha lastet ned designet for boksen fikk jeg det inn i programmet Inkscape hvor jeg fikk fordelt de forskjellige delene på treplaten jeg skulle laserkutte. I tillegg måtte jeg lage et utsnitt 
+										på framsiden av boksen, hvor selve speilet skulle være. Etter å ha laget det og lastet det ned som PDF ble det slikt:	
+									</p>
+									<img src="images/sluttprosjekt/laserkutt-display.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>PDF dokumentet som inneholdt filen på pcen for laserkutting.</figcaption>
+									<p>
+										<br/>
+										Denne filen ble så sendt til laserkutteren.
+									</p>
+									<img src="images/sluttprosjekt/laserkutt_tid.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Kuttingen tok 7.59 min</figcaption>
+									<p>
+										<br/>
+										Selve kuttingen gikk fint:
+									</p>
+								
+									<video controls="controls" width="800px">
+										<source  src="images/sluttprosjekt/laserKutt.mp4" type="video/mp4" />
+										Nettleseren støtter ikke videoavspilling.
+									</video>
+									<br/>
+									<img src="images/sluttprosjekt/laserkutt_ferdig.jpg" style="max-width:600px;width:100%"/>
+
+									<p>
+										<br/>
+										Etter å ha laserkuttet rammen til speilet, var neste steg å lime den sammen:
+									</p>
+									<img src="images/sluttprosjekt/box_limt.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Jeg limte to og to sider av rammen fast til fremsiden av rammen. <br/></figcaption>
+									<img src="images/sluttprosjekt/box_sammensatt.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Til slutt var alle sider limt på plass med unntak av bakside.</figcaption>
+
 								</div>
 								<div class="inner">
-									<h2>Korrekt design og gravering</h2>
-									<p>Etter feilprinten valgte jeg å fordele teksten over to linjer, noe som førte til at det ikke ville være fare for overlapp. Det gjorde også at graveringsjobben tok 5 minutter kontra 8 minutter tidligere. Designet ble da slik:</p>
-									<img src="images/riktig_design.JPG" alt="riktig design"  style="max-width:800px;"/>
-									<p>Dette designet fungerte mye bedre med graveringen og graveringsjobben gikk fint</p>
-									<img src="images/graveringsjobb.jpg" alt="graveringsjobben"  style="max-width:800px;">
-									<p>Resultatet av graveringen ble da:</p>
-									<img src="images/riktig-gravering.jpg" alt="riktig gravert"  style="max-width:800px;"/>
-									<p>+ en veldig fornøyd mor</p>
+									<h2>3D - print</h2>
+									<h3>Skjermfester</h3>
+									<p>
+										For å holde skjermen og speilet på plass i rammen, krevdes det noen form for fester. Inspirasjonsmalen hadde laget noen, men jeg ønsket å designe og printe egne. 
+										Jeg tenkte da å benytte et feste i hvert hjørne av skjermen. Jeg designet da et feste som så slikt ut:
+									</p>
+									<iframe src="https://hiof56.autodesk360.com/shares/public/SH35dfcQT936092f0e432bb2b162c8871616?mode=embed" 
+									width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0">
+								</iframe>
+								<p>
+									Med dette feste vil skjermen bli holdt ned mot fremsiden av speilrammen. Printen gikk slik:
+								 </p>
+								 <video controls="controls" width="800px">
+									 <source src="images/sluttprosjekt/skjermfeste_print.mp4" type="video/mp4"/>
+									 Nettleseren støtter ikke videoavspilling.
+								 </video>
+								 <p>Resultatet av printen:</p>
+								 <img src="images/sluttprosjekt/skjermfeste.jpg" style="max-width:600px;width:100%"/>
+								 <h3>RaspberryPi-feste</h3>
+								 <p>
+									 I tilegg til å printe skjermfester valgte jeg å printe et feste for RaspberryPien slik at den ville sitte fast på baksiden av skjermen. Jeg fant et design for et feste 
+									 på <a href="https://www.thingiverse.com/thing:922740/files">thingiverse.com</a> Modellen var delt inn i topp og bunn:
+								 </p>
+								 <iframe src="https://hiof56.autodesk360.com/shares/public/SH35dfcQT936092f0e43c4818276f9fb690f?mode=embed" 
+								 width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0">
+								</iframe>
+								<iframe src="https://hiof56.autodesk360.com/shares/public/SH35dfcQT936092f0e43815c798b400f14f6?mode=embed" 
+								width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0">
+								</iframe>
+								<p>
+									<br/>
+									Printing av disse delene gikk fint:
+								</p>
+								<video controls="controls" width="800px">
+									<source src="images/sluttprosjekt//raspberryPi-feste-bunn-print.mp4" type="video/mp4"/>
+									Nettleseren støtter ikke videoavspilling.
+								</video>
+								<video controls="controls" width="800px">
+									<source src="images/sluttprosjekt/raspberryPi-feste-print.mp4" type="video/mp4"/>
+									Nettleseren støtter ikke videoavspilling.
+								</video>
+								<p>
+									<br/>
+									Resultatet ble også bra:
+								</p>
+								<img src="images/sluttprosjekt/raspberryPi_feste_bunn.jpg" style="max-width:600px;width:100%"/>
+								<img src="images/sluttprosjekt/raspberryPi_feste_top.jpg" style="max-width:600px;width:100%"/>
+								</div>
+								<div class="inner">
+									<h2>Koding av speilet</h2>
+									<p>
+										For at speilet skulle bli et smartspeil var neste steg å kode en RasberryPi til å vise informasjonen jeg ønsket. I utgangspunktet skulle jeg benytte
+										koden som var brukt i <a href="https://hackaday.io/project/13466-raspberry-pi-smart-mirror">eksempelet</a>, men koden var utdatert og fungerte ikke helt med
+										hva jeg ønsket. Jeg fant da et annet eksempel kalt <a href="https://all3dp.com/2/raspberry-pi-magic-mirror-smart-best-project/">"MagicMirror"</a>. Dette eksempelet
+										hadde en fin veiledning på hvordan man skulle sette opp smartspeilet, samt en enkel introduksjon til hvordan det kunne tilpasses. 
+									</p>
+									<p>
+										<br/>
+										For å få speilet på RaspberryPien klonet jeg <a href="https://github.com/MichMich/MagicMirror">Github Branchen</a> som ble linket fra MagicMirror eksemplet. Deretter lastet jeg ned 
+										speilet fra branchen som ble klonet:
+									</p>
+									<img src="images/sluttprosjekt/magicmirror_nedalsting.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Speilet ble lastet ned til RaspberryPien som et Node.js program</figcaption>
+
+									<p>
+										<br/>
+										Når programmet ble kjørt så det slik ut:
+									</p>
+									<img src="images/sluttprosjekt/mm_before.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Værmelding ville ikke lastes og nyheter kom fra New York Times.</figcaption>
+									<p>
+										<br/>
+										Jeg ønsket å personalisere speilet noe. Som forskjell ville jeg ha nyheter fra VG, værmelding fra Halden og få inn norske kalenderdager. Jeg gikk dermed inn i Config.js 
+										og endret det jeg ønsket. 
+										<ul>
+										<li>Jeg hentet URL til en norsk kalender.</li>
+										<li>Jeg lagde en API-nøkkel for værdata slik at værmeldingen gjaldt for Halden.</li>
+										<li>Jeg la inn RSS-newsfeed fra VG slik at nyeste store sak ble vist.</li>
+									</ul>
+										Slik ble endringene i koden:
+									</p>
+									<img src="images/sluttprosjekt/mm_endringer.jpg" style="max-width:600px;width:100%"/>
+
+									<p>
+										<br/>
+										Resultatet av endringene ble da slikt:
+									</p>
+									<img src="images/sluttprosjekt/mm_after.jpg" style="max-width:600px;width:100%"/>
+									<p>
+										<br/>
+										Det siste jeg gjorde med kode var å vende skjermen 90 grader, samt gjøre displayområdet mindre slik at det passet innenfor tiltenkt speilstørrelse og retning.
+									</p>
+								</div>
+								<div class="inner">
+									<h2>Montering</h2>
+									<p>
+										Da delene var klare, og koden for RaspberryPien ferdig var neste steg å sette sammen alle delene. Jeg forsøkte å sette alt på plass før jeg begynte å skru fast feste O.L. Jeg
+										fant da ut at jeg trengte noen flere deler enn først tiltenkt, samt endre noen av festene. 
+									 </p>
+									 <h3>Speilholdere</h3>
+									 <p>
+										 Ettersom akryl-glasset var smalere enn innvendig bredde av rammen, og skjermen lå oppå akryl-glasset, sklei det rundt på fremsiden av speilet. Jeg løste det ved å printe to vinkler som
+										 var tilpasset akryl-glassets dybde, samt avstanden på 5mm mellom skjermen og rammen. Designet ble slikt:
+									 </p>
+									 <iframe src="https://hiof56.autodesk360.com/shares/public/SH35dfcQT936092f0e43fe190245c668056c?mode=embed" 
+									 width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0">
+									</iframe>
+									 <h3>Feil med fester</h3>
+									 <p>
+										Selvom det var nøye målt virket det som om det var noen millimeter avvik på skjermfesten. Det førte til at kun 3 fikk plass til å holde skjermen på plass som sett på bilde:
+									 </p>
+									<img src="images/sluttprosjekt/skjerm_i_boks_3feste.jpg" style="max-width:600px;width:100%"/>
+									<figcaption>Det var ikke mulig å få på plass det siste feste. Det førte til at det var noe slark i speilet når det sto.</figcaption>
+									<p>
+										<br/>
+										Jeg designet et nytt feste med 3mm bredde istedet for 5mm. Printen av det og glassholderene gikk bra:
+									</p>
+									<video controls="controls" width="800px">
+										<source src="images/sluttprosjekt/print_av_nye_deler.mp4" type="video/mp4"/>
+										Nettleseren støtter ikke videoavspilling.
+									</video>
+									<p> <br/> Med de nye festene var det ikke noe problem å montere festene og dermed skjermen til rammen:</p>
+									<img src="images/sluttprosjekt/skjerm_i_boks.jpg" style="max-width:600px;width:100%"/>
+									<p><br/>
+										Hvert feste ble festet til rammen med skruer i hull som var tilpasset 4mm skruer:
+									</p>
+									<img src="images/sluttprosjekt/skjerm_feste.jpg" style="max-width:600px;width:100%"/>
+									<p><br/>
+										Da skjermen var festet var speilet også klart. Uten RaspberryPien ble det slikt:
+									</p>
+									<img src="images/sluttprosjekt/speil_ferdig.jpg" style="max-width:600px;width:100%"/>
+									<p><br/>
+										Når RaspberryPien blir skrudd på blir da speilet slikt:
+									</p>
+									<img src="images/sluttprosjekt/mm_ferdig1.jpg" style="max-width:600px;width:100%"/>
+									<img src="images/sluttprosjekt/mm_ferdig2.jpg" style="max-width:600px;width:100%"/>
+									<p>
+										<br/>
+										I utgangspunktet måtte programmet for speilet kjøres manuelt for å starte opp speilet, men gjennom youtubevideoen til <a href="https://www.youtube.com/watch?v=iqNHX8v8cPY">Fuzz The Pi Guy</a> 
+										fikk jeg satt opp en metode som gjorde at speilet startet ved boot. Under er det en beskrivende video av speilet.
+									</p>
 								</div>
 							</section>
-
+ 
 					</div>
 
 				
