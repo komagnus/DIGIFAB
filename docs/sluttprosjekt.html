@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/makerSpace_logo.png">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -45,7 +46,7 @@
 								</div>
 								<div class="inner">
 									<h2>Utstyr</h2>
-									<p>For prosjektet har jeg trengt følgende deler: </p>
+									<p>For prosjektet har jeg brukt følgende deler: </p>
                                         <ul>
                                             <li>Pc-skjerm</li>
                                             <li>RaspberryPi</li>
@@ -62,8 +63,8 @@
 									<h2>Speilets ramme</h2>
 									<p>
 										Slik som speilet var designet i inspirasjonskilden, ble det brukt "planker" til ramme og det ble 3dprintet fester som skulle holde skjermen på baksiden på plass. Jeg ønsket også originalt å 
-										benytte samme metode, men da emneansvarlig kom med forsalg om å laserkutte makercase istedet fant jeg ut at jeg heller ville bruke det. Jeg var redd for at matrialet som skulle laserkuttes ble for tynt,
-										da jeg måtte benytte fester på baksiden av skjermen. Jeg fant derimot til slutt ut at det ville gå med 6mm, hvor jeg kunne benytte korte skruer. Designet av rammen ble da slik:  
+										benytte samme metode, men da emneansvarlig kom med forsalg om å laserkutte makercase istedet fant jeg ut at jeg heller ville det. Jeg var redd for at matrialet som skulle laserkuttes ble for tynt,
+										da jeg skulle skru inn fester i rammen på baksiden av skjermen. Jeg fant derimot til slutt ut at det ville gå med 6mm, hvor jeg kunne benytte korte skruer. Designet av rammen ble da slik:  
 									</p>
 									<img src="images/sluttprosjekt/makercase.JPG" style="max-width:600px;width:100%"/>
 									<figcaption>Makercase design med riktig størrelser, laget på nettsiden til <a href="https://en.makercase.com/#/basicbox">makercase</a>.</figcaption>
@@ -194,7 +195,25 @@
 									<img src="images/sluttprosjekt/mm_after.jpg" style="max-width:600px;width:100%"/>
 									<p>
 										<br/>
-										Det siste jeg gjorde med kode var å vende skjermen 90 grader, samt gjøre displayområdet mindre slik at det passet innenfor tiltenkt speilstørrelse og retning.
+										Deretter vendte jeg skjermen 90 grader, samt gjøre displayområdet mindre slik at det passet innenfor tiltenkt speilstørrelse og retning. I utgangspunktet måtte programmet for 
+										speilet kjøres manuelt for å starte opp speilet, men gjennom youtubevideoen til <a href="https://www.youtube.com/watch?v=iqNHX8v8cPY">Fuzz The Pi Guy</a> 
+										fikk jeg satt opp en metode som gjorde at speilet startet ved boot. Jeg kjørte da følgende kodelogikk i terminal for å få speilet til å starte automatisk:
+										<br/>
+										<br/><code>nano mm.sh</code> <br/> 
+										Lagde en fil som skulle kjøres ved oppstart<br/> <br/>
+										<code>
+											#!/bin/bash<br/>
+											sleep 5<br/>
+											cd /home/pi/MagicMirror/<br/>
+											
+											npm run start</code> <br/> 
+										Ga koden logikken over slik at med 5 sekunder pause før den kjøres skal det gåes til mappen for speilet og kjøre koden.<br/> <br/>
+										<code>chmod +x mm.sh</code><br/>
+										Kjører så følgende kode for at logikken fra isted kan bli utført.<br/> <br/>
+										<code>crontab -e</code><br/> 
+										Åpner crontab-filen og setter inn at logikken skal kjøres ved boot: <br/>
+										<code>@reboot /home/pi/mm.sh &</code>
+
 									</p>
 								</div>
 								<div class="inner">
@@ -242,8 +261,7 @@
 									<img src="images/sluttprosjekt/mm_ferdig2.jpg" style="max-width:600px;width:100%"/>
 									<p>
 										<br/>
-										I utgangspunktet måtte programmet for speilet kjøres manuelt for å starte opp speilet, men gjennom youtubevideoen til <a href="https://www.youtube.com/watch?v=iqNHX8v8cPY">Fuzz The Pi Guy</a> 
-										fikk jeg satt opp en metode som gjorde at speilet startet ved boot. Under er det en beskrivende video av speilet.
+										 Under er det en beskrivende video av speilet.
 									</p>
 									<video controls="controls" width="800px">
 										<source src="images/sluttprosjekt/speil_forklaring.mp4" type="video/mp4"/>
